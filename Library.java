@@ -1,9 +1,6 @@
 package LMS;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Library {
 private ArrayList<Book> books=new ArrayList<>() ;
@@ -44,10 +41,25 @@ public void issueBook(int bookId, Student student){
             System.out.println("Book not Available");// if not returned it will execute
 
     }
+    public void returnBook(int bookId,Student student) {
+        List<Book> studentBooks = issuedbooks.get(student);
+        if (studentBooks != null) {
+            for (Book book : studentBooks) {
+                if (book.getid() == bookId) {
+                book.setAvailable(true);
+                studentBooks.remove(book);
+                System.out.println("Book returned"+book.getTitle());
+                return;
+                }
+            }
+        }
+        System.out.println("This student did not issue this book.");
+
+    }
 }
 
 
 
 
 
-}
+
