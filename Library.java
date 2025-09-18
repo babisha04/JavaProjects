@@ -56,6 +56,21 @@ public void issueBook(int bookId, Student student){
         System.out.println("This student did not issue this book.");
 
     }
+    public void searchBook(String title){
+    for(Book book:books){
+        if(book.getTitle().equalsIgnoreCase(title)){
+            book.getdetails();
+            return;
+        }
+    }
+    System.out.println("Book not found");
+    }
+    public void displayBook(){
+    for(Book book:books){
+        book.getdetails();
+    }
+    }
+
 }
 
 
