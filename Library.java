@@ -33,7 +33,7 @@ public void issueBook(int bookId, Student student){
     for(Book book:books){
         if(bookId==book.getid()&& book.isAvailable()){
             book.setAvailable(false);
-            issuedbooks.computeIfAbsent(student,k->new ArrayList<>()).add(book);
+            issuedbooks.computeIfAbsent(student.id,k->new ArrayList<>()).add(book);
             System.out.println("Book Issued:"+book.getTitle()+"to "+student.name);
             return; // it will simply return after done
         }}
