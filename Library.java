@@ -7,7 +7,7 @@ private ArrayList<Book> books=new ArrayList<>() ;
 private HashMap<Integer, ArrayList<Book>>  issuedbooks= new HashMap<>();
 public void addbook(Book book){
     books.add(book);
-    System.out.println("Book Added"+book.getTitle());
+    System.out.println("Book Added:2"+book.getTitle());
 
 }
 public void removebook(int id){
@@ -27,7 +27,7 @@ public void removebook(int id){
 
     }
     books.remove(target);
-    System.out.println("Book"+id+"removed successfully");
+    System.out.println("Book "+id+" removed successfully");
 }
 public void issueBook(int bookId, Student student){
     for(Book book:books){
